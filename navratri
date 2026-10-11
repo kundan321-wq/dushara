@@ -1,0 +1,749 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Happy Navratri | Kundan Kumar</title>
+
+<style>
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: Georgia, serif;
+    background: #fff8ed;
+    color: #421313;
+    overflow-x: hidden;
+}
+
+/* Navigation */
+
+header {
+    background: #690000;
+    color: white;
+    padding: 18px 7%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 15px;
+    border-bottom: 3px solid gold;
+}
+
+.logo {
+    color: gold;
+    font-size: 23px;
+    font-weight: bold;
+}
+
+nav a {
+    color: white;
+    text-decoration: none;
+    margin: 8px;
+    font-size: 15px;
+}
+
+nav a:hover {
+    color: gold;
+}
+
+/* Hero */
+
+.hero {
+    min-height: 570px;
+    padding: 80px 20px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    color: white;
+    background:
+    radial-gradient(circle at top, #ffae00 0%, transparent 45%),
+    linear-gradient(135deg, #650000, #d52c00, #7b0000);
+}
+
+.hero-icon {
+    font-size: 85px;
+    margin-bottom: 15px;
+    animation: glow 2s infinite alternate;
+}
+
+.hero h1 {
+    color: #ffe16a;
+    font-size: clamp(36px, 7vw, 65px);
+    margin-bottom: 20px;
+    text-shadow: 2px 3px 10px #450000;
+}
+
+.hero p {
+    max-width: 750px;
+    font-size: 19px;
+    line-height: 1.8;
+}
+
+.btn {
+    display: inline-block;
+    padding: 13px 25px;
+    background: gold;
+    color: #650000;
+    border: none;
+    border-radius: 30px;
+    margin: 12px 5px;
+    font-size: 16px;
+    font-weight: bold;
+    text-decoration: none;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.btn:hover {
+    background: white;
+    transform: translateY(-3px);
+}
+
+/* General Sections */
+
+section {
+    padding: 65px 8%;
+}
+
+.section-title {
+    text-align: center;
+    color: #920000;
+    font-size: clamp(28px, 5vw, 40px);
+    margin-bottom: 20px;
+}
+
+.subtitle {
+    text-align: center;
+    max-width: 750px;
+    margin: 0 auto 35px;
+    line-height: 1.8;
+    font-size: 17px;
+}
+
+/* Welcome */
+
+.welcome {
+    text-align: center;
+    background: #fff8ed;
+}
+
+.welcome-box {
+    max-width: 850px;
+    margin: auto;
+    padding: 35px;
+    border: 2px solid #e6b94a;
+    border-radius: 20px;
+    background: white;
+    box-shadow: 0 5px 20px #65000015;
+}
+
+.welcome-box p {
+    font-size: 18px;
+    line-height: 2;
+}
+
+/* Cards */
+
+.cards {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: 22px;
+}
+
+.card {
+    background: white;
+    text-align: center;
+    padding: 28px 20px;
+    border-radius: 15px;
+    border: 1px solid #f0d49a;
+    box-shadow: 0 5px 18px #65000012;
+    transition: 0.3s;
+}
+
+.card:hover {
+    transform: translateY(-7px);
+    box-shadow: 0 10px 25px #65000025;
+}
+
+.card .icon {
+    font-size: 45px;
+    margin-bottom: 15px;
+}
+
+.card h3 {
+    color: #9d0000;
+    margin-bottom: 12px;
+}
+
+.card p {
+    line-height: 1.8;
+}
+
+/* Nine days */
+
+.days {
+    background: #fff0d7;
+}
+
+.day-card {
+    background: white;
+    border-radius: 14px;
+    padding: 24px;
+    text-align: center;
+    border-bottom: 4px solid #d99a16;
+}
+
+.day-card .icon {
+    font-size: 38px;
+    margin-bottom: 10px;
+}
+
+.day-card h3 {
+    color: #8a0000;
+    margin-bottom: 8px;
+}
+
+/* Blessings */
+
+.blessings {
+    background: linear-gradient(135deg, #740000, #bd2700);
+    color: white;
+    text-align: center;
+}
+
+.blessings .section-title {
+    color: gold;
+}
+
+.blessing-text {
+    max-width: 800px;
+    margin: auto;
+    font-size: 20px;
+    line-height: 2;
+}
+
+/* Wishes */
+
+.wishes {
+    background: #fff8ed;
+}
+
+.wish-card {
+    background: white;
+    padding: 25px;
+    border-radius: 15px;
+    border: 1px solid #e7c36c;
+    text-align: center;
+    line-height: 1.9;
+}
+
+/* Interactive message */
+
+.interactive {
+    text-align: center;
+    background: #ffefcf;
+}
+
+#message {
+    min-height: 100px;
+    max-width: 750px;
+    margin: 25px auto;
+    font-size: 21px;
+    line-height: 1.8;
+    color: #8a0000;
+    padding: 20px;
+}
+
+/* About */
+
+.about {
+    text-align: center;
+    background: white;
+}
+
+.about-box {
+    max-width: 700px;
+    margin: auto;
+    line-height: 2;
+    font-size: 18px;
+}
+
+/* Footer */
+
+footer {
+    background: #430000;
+    color: white;
+    text-align: center;
+    padding: 35px 20px;
+    line-height: 2;
+}
+
+footer h2 {
+    color: gold;
+}
+
+footer a {
+    color: gold;
+    text-decoration: none;
+}
+
+/* Floating flowers */
+
+.flower {
+    position: fixed;
+    top: -35px;
+    z-index: 10;
+    pointer-events: none;
+    animation: fall linear forwards;
+}
+
+@keyframes fall {
+    to {
+        transform: translateY(110vh) rotate(360deg);
+        opacity: 0;
+    }
+}
+
+@keyframes glow {
+    from {
+        transform: scale(1);
+        text-shadow: 0 0 5px gold;
+    }
+    to {
+        transform: scale(1.08);
+        text-shadow: 0 0 25px gold;
+    }
+}
+
+/* Mobile */
+
+@media (max-width: 600px) {
+    header {
+        justify-content: center;
+        text-align: center;
+    }
+
+    nav {
+        display: flex;
+        justify-content: center;
+        flex-wrap: wrap;
+    }
+
+    nav a {
+        margin: 7px;
+    }
+
+    .hero {
+        min-height: 500px;
+    }
+
+    section {
+        padding: 45px 6%;
+    }
+
+    .welcome-box {
+        padding: 23px;
+    }
+}
+</style>
+</head>
+
+<body>
+
+<!-- Navigation -->
+
+<header>
+    <div class="logo">🌺 Kundan Kumar</div>
+
+    <nav>
+        <a href="#home">Home</a>
+        <a href="#about">About</a>
+        <a href="#days">Nine Days</a>
+        <a href="#wishes">Wishes</a>
+        <a href="#contact">Contact</a>
+    </nav>
+</header>
+
+<!-- Hero Section -->
+
+<section class="hero" id="home">
+
+    <div class="hero-icon">🙏 🔱 🙏</div>
+
+    <h1>Happy Navratri</h1>
+
+    <h2>🌺 जय माता दी 🌺</h2>
+
+    <p>
+        May Maa Durga fill your life with happiness,
+        peace, prosperity, courage and success.
+        May her divine blessings always be with you
+        and your family.
+    </p>
+
+    <div>
+        <a href="#wishes" class="btn">🌸 Read Wishes</a>
+
+        <button class="btn" onclick="shareWebsite()">
+            📲 Share Wishes
+        </button>
+    </div>
+
+</section>
+
+<!-- Welcome Section -->
+
+<section class="welcome" id="about">
+
+    <h2 class="section-title">🌺 Welcome to Navratri 🌺</h2>
+
+    <div class="welcome-box">
+
+        <p>
+            Navratri is a beautiful festival dedicated to
+            Maa Durga and her nine divine forms.
+            It is a time for devotion, positivity, hope
+            and new beginnings.
+        </p>
+
+        <br>
+
+        <p>
+            May this sacred festival bring happiness to every
+            home, strength to every heart and success to
+            every new beginning.
+        </p>
+
+        <br>
+
+        <h3 style="color:#a00000;">
+            🙏 Wishing You a Very Happy Navratri! 🙏
+        </h3>
+
+    </div>
+
+</section>
+
+<!-- Nine Forms -->
+
+<section class="days" id="days">
+
+    <h2 class="section-title">🔱 Nine Divine Forms of Maa Durga</h2>
+
+    <p class="subtitle">
+        Navratri celebrates the nine forms of Maa Durga.
+        May each day inspire faith, courage and positivity.
+    </p>
+
+    <div class="cards">
+
+        <div class="day-card">
+            <div class="icon">🌺</div>
+            <h3>Day 1</h3>
+            <h4>Maa Shailputri</h4>
+            <p>May your life be filled with strength and stability.</p>
+        </div>
+
+        <div class="day-card">
+            <div class="icon">🙏</div>
+            <h3>Day 2</h3>
+            <h4>Maa Brahmacharini</h4>
+            <p>May you receive patience, peace and wisdom.</p>
+        </div>
+
+        <div class="day-card">
+            <div class="icon">🔔</div>
+            <h3>Day 3</h3>
+            <h4>Maa Chandraghanta</h4>
+            <p>May courage and confidence guide your journey.</p>
+        </div>
+
+        <div class="day-card">
+            <div class="icon">✨</div>
+            <h3>Day 4</h3>
+            <h4>Maa Kushmanda</h4>
+            <p>May your life shine with energy and happiness.</p>
+        </div>
+
+        <div class="day-card">
+            <div class="icon">🌼</div>
+            <h3>Day 5</h3>
+            <h4>Maa Skandamata</h4>
+            <p>May love and care fill your home.</p>
+        </div>
+
+        <div class="day-card">
+            <div class="icon">🪔</div>
+            <h3>Day 6</h3>
+            <h4>Maa Katyayani</h4>
+            <p>May you find courage to achieve your goals.</p>
+        </div>
+
+        <div class="day-card">
+            <div class="icon">🌙</div>
+            <h3>Day 7</h3>
+            <h4>Maa Kalaratri</h4>
+            <p>May fear disappear and hope grow stronger.</p>
+        </div>
+
+        <div class="day-card">
+            <div class="icon">🪷</div>
+            <h3>Day 8</h3>
+            <h4>Maa Mahagauri</h4>
+            <p>May peace, purity and happiness bless you.</p>
+        </div>
+
+        <div class="day-card">
+            <div class="icon">🔱</div>
+            <h3>Day 9</h3>
+            <h4>Maa Siddhidatri</h4>
+            <p>May wisdom and success accompany you.</p>
+        </div>
+
+    </div>
+
+</section>
+
+<!-- Blessings -->
+
+<section class="blessings">
+
+    <h2 class="section-title">🙏 Maa Durga's Blessings 🙏</h2>
+
+    <div class="blessing-text">
+
+        <p>
+            May Maa Durga remove every difficulty from your path
+            and fill your life with courage and confidence.
+        </p>
+
+        <br>
+
+        <p>
+            May your dreams come true, your family remain happy
+            and your future be bright.
+        </p>
+
+        <br>
+
+        <h2>🌺 जय माता दी! 🌺</h2>
+
+    </div>
+
+</section>
+
+<!-- Wishes Cards -->
+
+<section class="wishes" id="wishes">
+
+    <h2 class="section-title">💌 Special Navratri Wishes</h2>
+
+    <p class="subtitle">
+        Share these beautiful wishes with your friends,
+        family and loved ones.
+    </p>
+
+    <div class="cards">
+
+        <div class="wish-card">
+            <h3>🌸 Happiness</h3>
+            May Maa Durga fill your days with happiness,
+            your heart with peace and your home with love.
+        </div>
+
+        <div class="wish-card">
+            <h3>✨ Success</h3>
+            May every step bring you closer to your dreams
+            and every challenge make you stronger.
+        </div>
+
+        <div class="wish-card">
+            <h3>🙏 Prosperity</h3>
+            May your family always enjoy good health,
+            prosperity and togetherness.
+        </div>
+
+        <div class="wish-card">
+            <h3>🪔 New Beginnings</h3>
+            May this Navratri open the doors to new
+            opportunities, hope and positive changes.
+        </div>
+
+    </div>
+
+</section>
+
+<!-- Interactive Wishes -->
+
+<section class="interactive">
+
+    <h2 class="section-title">🌺 Receive a Special Wish 🌺</h2>
+
+    <p class="subtitle">
+        Click the button to reveal a special Navratri message!
+    </p>
+
+    <div id="message">
+        🙏 May Maa Durga bless you and your family. 🙏
+    </div>
+
+    <button class="btn" onclick="newWish()">
+        ✨ Get Another Wish
+    </button>
+
+    <button class="btn" onclick="shareWebsite()">
+        📲 Share with Friends
+    </button>
+
+</section>
+
+<!-- About Creator -->
+
+<section class="about" id="contact">
+
+    <h2 class="section-title">🌟 About the Creator</h2>
+
+    <div class="about-box">
+
+        <p>
+            This Navratri greeting website is created with
+            love and festive spirit by:
+        </p>
+
+        <br>
+
+        <h2 style="color:#a00000;">Kundan Kumar</h2>
+
+        <p>Student | BBA Pursuing</p>
+
+        <p>
+            Spreading happiness, positivity and festive wishes
+            through a simple website.
+        </p>
+
+        <br>
+
+        <p>🙏 Thank you for visiting my website! 🙏</p>
+
+    </div>
+
+</section>
+
+<!-- Footer -->
+
+<footer>
+
+    <h2>🌺 Kundan Kumar 🌺</h2>
+
+    <p>Wishing Everyone a Happy Navratri!</p>
+
+    <p>जय माता दी 🚩</p>
+
+    <p>© 2026 Kundan Kumar | Navratri Wishes Website</p>
+
+    <a href="#home">⬆️ Back to Top</a>
+
+</footer>
+
+<script>
+
+// Different Navratri wishes
+
+const wishes = [
+    "🌺 May Maa Durga bless your life with happiness and peace! 🙏",
+
+    "🔱 May you always have the courage to achieve your dreams!",
+
+    "🪔 May your home shine with love, joy and prosperity!",
+
+    "🌸 Wishing you nine nights of devotion, happiness and hope!",
+
+    "🙏 May Maa Durga protect your family and guide your path!",
+
+    "✨ May every new day bring you success and new opportunities!",
+
+    "🌼 May your heart be filled with faith and positivity!",
+
+    "🚩 Jai Mata Di! Wishing you and your family a blessed Navratri!",
+
+    "💖 May happiness and peace always stay with you!"
+];
+
+function newWish() {
+    const randomIndex = Math.floor(Math.random() * wishes.length);
+
+    document.getElementById("message").innerText =
+        wishes[randomIndex];
+}
+
+// Share wishes
+
+function shareWebsite() {
+
+    const message =
+        "🌺 Happy Navratri! 🌺\n\n" +
+        "🙏 जय माता दी! 🙏\n\n" +
+        "May Maa Durga bless you and your family " +
+        "with happiness, peace and success.\n\n" +
+        "Wishes by Kundan Kumar ❤️";
+
+    const whatsappURL =
+        "https://wa.me/?text=" + encodeURIComponent(message);
+
+    if (navigator.share) {
+
+        navigator.share({
+            title: "Happy Navratri",
+            text: message
+        }).catch(function(error) {
+            console.log("Sharing cancelled or unavailable.");
+        });
+
+    } else {
+
+        window.open(whatsappURL, "_blank");
+
+    }
+}
+
+// Falling flowers
+
+setInterval(function() {
+
+    const flower = document.createElement("div");
+
+    flower.className = "flower";
+
+    const symbols = ["🌺", "🌸", "✨", "🌼"];
+
+    flower.innerText =
+        symbols[Math.floor(Math.random() * symbols.length)];
+
+    flower.style.left = Math.random() * 100 + "vw";
+
+    flower.style.fontSize =
+        (15 + Math.random() * 20) + "px";
+
+    flower.style.animationDuration =
+        (5 + Math.random() * 5) + "s";
+
+    document.body.appendChild(flower);
+
+    setTimeout(function() {
+        flower.remove();
+    }, 10000);
+
+}, 700);
+
+</script>
+
+</body>
+</html
